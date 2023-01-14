@@ -4,11 +4,41 @@
   "description": "Fun with promises",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "starts": "webpack serve --open --config ./webpack.config.js --env mode=dev",
+        "build": "webpack --config ./webpack.config.js --env mode=prod",
+        "lint": "eslint . --ext .ts",
+        "predeploy": "npm run build"
   },
   "author": "mikhama",
   "license": "MIT",
-  "devDependencies": {
-    "json-server": "^0.16.3"
-  }
+
+"devDependencies": {
+  "@typescript-eslint/eslint-plugin": "^5.47.0",
+  "@typescript-eslint/parser": "^5.47.0",
+  "clean-webpack-plugin": "^3.0.0",
+  "copy-webpack-plugin": "^7.0.0",
+  "css-loader": "^5.1.0",
+  "eslint": "^7.32.0",
+  "eslint-config-airbnb-typescript": "^16.1.0",
+  "eslint-config-prettier": "^8.3.0",
+  "eslint-plugin-import": "^2.25.3",
+  "eslint-plugin-prettier": "^3.4.0",
+  "eslint-webpack-plugin": "^3.1.1",
+  "html-webpack-plugin": "^5.2.0",
+  "prettier": "^2.2.1",
+  "style-loader": "^2.0.0",
+  "typescript": "^4.9.4",
+  "webpack": "^5.75.0",
+  "webpack-cli": "^4.5.0",
+  "webpack-dev-server": "^4.11.1",
+  "webpack-merge": "^5.7.3",
+  "json-server": "^0.16.3"
+},
+"dependencies": {
+  "gh-pages": "^4.0.0",
+  "rxjs": "^7.8.0",
+  "source-map-support": "^0.5.21",
+  "ts-loader": "^9.2.6"
+}
 }
