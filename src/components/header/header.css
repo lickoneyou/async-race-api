@@ -3,6 +3,13 @@
   justify-content: space-around;
 }
 
+.toGarage, .toWinners{
+  text-decoration: none;
+  border: 0.1rem solid white;
+  color: white;
+  padding: 0.3rem;
+}
+
 .headerMenu{
   display: flex;
   flex-direction: column;
