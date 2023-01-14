@@ -1,8 +1,9 @@
 import './index.css'
 import { App } from "./components/app";
+import { addCar} from './components/cars/createCars';
 
-const app = new App();
-const body = document.querySelector('body') as HTMLBodyElement
+export const app = new App();
+export const body = document.querySelector('body') as HTMLBodyElement
 
 if (!body) {
   throw new Error("The main is undefined!");
@@ -17,3 +18,7 @@ window.addEventListener("hashchange", () => {
    body.innerHTML = app.renderWinners() 
   }
 })
+
+const createButton = document.querySelector('.createButton') as HTMLButtonElement
+
+createButton.addEventListener('click', addCar)

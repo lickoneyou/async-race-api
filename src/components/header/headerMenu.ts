@@ -3,14 +3,14 @@ import './header.css'
 export const headerMenu = `
 <div class='headerMenu'>
 <div class='create'>
-<input type="text">
-<input type="color">
+<input class='createCarName' type="text" value=''>
+<input class='createCarColor' type="color" value='#FFFFFF'>
 <button class='createButton'>CREATE</button>
 </div>
 
 <div class='update'>
-<input type="text">
-<input type="color">
+<input class='updateCarName' type="text" value=''>
+<input class='updateCarColor' type="color" value='#FFFFFF'>
 <button class='updateButton'>UPDATE</button>
 </div>
 
@@ -21,3 +21,6 @@ export const headerMenu = `
 </div>
 </div>
 `
+
+
+
