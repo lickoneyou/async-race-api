@@ -1,0 +1,13 @@
+.headerButtons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.headerMenu{
+  display: flex;
+  flex-direction: column;
+}
+
+.create, .update, .controlButtons{
+  display: flex;
+}
