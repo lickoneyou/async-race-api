@@ -1,6 +1,7 @@
 import './index.css'
 import { App } from "./components/app";
 import { addCar} from './components/cars/createCars';
+import { garageArray, removeCar } from './components/garage/garage';
 
 export const app = new App();
 export const body = document.querySelector('body') as HTMLBodyElement
@@ -22,3 +23,11 @@ window.addEventListener("hashchange", () => {
 const createButton = document.querySelector('.createButton') as HTMLButtonElement
 
 createButton.addEventListener('click', addCar)
+
+const carRemove = document.querySelectorAll('.carRemove') as NodeListOf<Element>
+
+carRemove.forEach((carRemove) => carRemove.addEventListener('click', (e) => {
+let removeCarElement: string[] =[]
+garageArray.forEach(el => removeCarElement.push(el.match(carRemove.id)?.input || ''))
+removeCar(removeCarElement)
+}))
