@@ -83,15 +83,14 @@ async function carsEngine() {
     })
   )
   const data: CarsEngine = await carSpeedPromise.json()
-   console.log(data)
   return +(data.distance / data.velocity / 1000).toFixed(2)
 }
 
-async function driveMode() {
-  const drive = (await fetch(`http://localhost:3000/engine?id=2&status=drive`, {method: 'PATCH'})).json()
-  return drive
-}
-driveMode()
+// async function driveMode() {
+//   const drive = (await fetch(`http://localhost:3000/engine?id=2&status=drive`, {method: 'PATCH'})).json()
+//   return drive
+// }
+// driveMode()
 
 const carImg = document.querySelectorAll('.carImg') as NodeListOf<Element>
 const start = document.querySelectorAll('.start') as NodeListOf<Element>
@@ -100,13 +99,17 @@ const race = document.querySelector('.race') as HTMLButtonElement
 const reset = document.querySelector('.reset') as HTMLButtonElement
 
 
-
+let bestTime: number[] = []
 
 async function draw(el: HTMLElement) {
   let time = 0
+  bestTime = []
 await carsEngine().then(data => time = data)
+bestTime.push(time)
   el.style.transform = `translate(${window.innerWidth - 230}px)`
   el.style.transition=`${time}s` 
+
+  winnetPopUpView(bestTime)
 }
 
 function drawStop(el: HTMLElement) {
@@ -153,4 +156,29 @@ race.addEventListener('click', ()=>{
       
     })
 
+  })
+
+  const winPopUp = document.querySelector('.winPopUp') as HTMLElement
+const winnerCarName = document.querySelector('.winnerCarName') as HTMLElement
+  const winnerTime = document.querySelector('.winnerTime') as HTMLElement
+
+  function winnetPopUpView(time:Array<number>) {
+    let bestTime = time.sort((a,b) => a - b)[0]*1000
+    setTimeout(() => {
+      let carName = ''
+      carImg.forEach(el =>  {
+        if(el.getAttribute('style') == `transform: translate(1133px); transition: all ${time.sort((a,b) => a - b)[0]}s ease 0s;`){
+         carName = el.parentElement?.parentElement?.parentElement?.querySelector('.carName')?.innerHTML!
+        }
+      })
+      winPopUp.style.display = 'flex'
+      winnerTime.innerHTML = `Time: ${time.sort((a,b) => a - b)[0]}s`
+      winnerCarName.innerHTML = `${carName}`
+    }, bestTime);
+  }
+
+  const OkButton = document.querySelector('.OkButton') as HTMLElement
+
+  OkButton.addEventListener('click', () => {
+    winPopUp.style.display = 'none'
   })

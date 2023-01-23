@@ -16,6 +16,7 @@
   color:white;
   margin-right: 0.4rem;
   margin-bottom: 0.4rem;
+  cursor: pointer;
 }
 
 .start{
@@ -24,6 +25,7 @@
   background: transparent;
   color:rgb(16, 152, 11);
   margin-right: 0.4rem;
+  cursor: pointer;
 }
 
 .stop{
@@ -32,6 +34,7 @@
   background: transparent;
   color:rgb(179, 8, 8);
   margin-right: 0.4rem;
+  cursor: pointer;
 }
 
 .carStart {
