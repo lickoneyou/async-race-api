@@ -97,6 +97,8 @@ const carImg = document.querySelectorAll('.carImg') as NodeListOf<Element>
 const start = document.querySelectorAll('.start') as NodeListOf<Element>
 const stop = document.querySelectorAll('.stop') as NodeListOf<Element>
 const race = document.querySelector('.race') as HTMLButtonElement
+const reset = document.querySelector('.reset') as HTMLButtonElement
+
 
 
 
@@ -140,6 +142,14 @@ stop.forEach(el => {
 race.addEventListener('click', ()=>{
     carImg.forEach(el => {
         draw(el.parentElement?.querySelector('.carImg')!)
+      
+    })
+
+  })
+
+  reset.addEventListener('click', ()=>{
+    carImg.forEach(el => {
+        drawStop(el.parentElement?.querySelector('.carImg')!)
       
     })
 
