@@ -2,7 +2,7 @@ import { garage, garageArray } from "./garage/garage";
 import { header } from "./header/header";
 import { headerButtons } from "./header/headerButtons";
 import { winPopUp } from "./winners/win";
-import { winnersTable } from "./winners/winners";
+import { winnersArray, winnersTable } from "./winners/winners";
 
 export class App {
   render(){
@@ -17,7 +17,9 @@ export class App {
   renderWinners(){
   return `
   ${headerButtons}
-  ${winnersTable}`
+  ${winnersTable}
+  ${winnersArray.join('')}
+  `
 }
 
 }

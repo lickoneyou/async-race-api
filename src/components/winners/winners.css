@@ -1,4 +1,13 @@
 .tableTittle{
   display: flex;
-  background-color: deepskyblue;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  border: 0.3rem solid white;
+  padding: 1rem;
+}
+
+.number, .car, .name, .wins, .bestTime{
+  margin-right: 1rem;
 }
