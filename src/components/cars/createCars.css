@@ -5,6 +5,10 @@
   margin-bottom: 0.5rem;
 }
 
+.carStart {
+    justify-content: space-between;
+}
+
 .carSelect, .carRemove{
   outline: none;
   border: 0.05rem solid white;
@@ -44,4 +48,9 @@
   color: white;
     font-size: 2rem;
     margin-left: 1.5rem;
+}
+
+.flagImg{
+  width: 5rem;
+  height: 6rem;
 }
