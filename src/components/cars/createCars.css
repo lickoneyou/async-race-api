@@ -1,0 +1,59 @@
+.carButtonsAndName,
+.carAddRemoveButtons,
+.carStart {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.carStart {
+    justify-content: space-between;
+}
+
+.carSelect, .carRemove{
+  outline: none;
+  border: 0.05rem solid white;
+  background: transparent;
+  color:white;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+}
+
+.start{
+  outline: none;
+  border: 0.05rem solid rgb(16, 152, 11);
+  background: transparent;
+  color:rgb(16, 152, 11);
+  margin-right: 0.4rem;
+  cursor: pointer;
+}
+
+.stop{
+  outline: none;
+   border: 0.05rem solid rgb(179, 8, 8);
+  background: transparent;
+  color:rgb(179, 8, 8);
+  margin-right: 0.4rem;
+  cursor: pointer;
+}
+
+.carStart {
+  border-bottom: 0.2rem solid white;
+}
+
+.carStartStopButtons {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 2rem;
+}
+
+.carName {
+  color: white;
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+
+.flagImg{
+  width: 5rem;
+  height: 6rem;
+}

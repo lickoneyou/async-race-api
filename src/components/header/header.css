@@ -1,0 +1,43 @@
+.headerButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+}
+
+.toGarage,
+.toWinners {
+  text-decoration: none;
+  border: 0.1rem solid white;
+  color: white;
+  padding: 0.3rem;
+}
+
+.headerMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.create,
+.update,
+.controlButtons {
+  display: flex;
+}
+
+.controlButtons:last-child {
+  margin-bottom: 2rem;
+}
+
+.createCarName,
+.createCarColor,
+.createButton,
+.updateCarName,
+.updateCarColor,
+.updateButton, .race, .reset, .generateCars {
+  outline: none;
+  border: 0.05rem solid white;
+  background: transparent;
+  color:white;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+}
