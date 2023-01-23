@@ -95,25 +95,42 @@ driveMode()
 
 const carImg = document.querySelectorAll('.carImg') as NodeListOf<Element>
 const start = document.querySelectorAll('.start') as NodeListOf<Element>
-
+const stop = document.querySelectorAll('.stop') as NodeListOf<Element>
 
 
 
 
 async function draw(el: HTMLElement) {
-  let speed = 0
-await carsEngine().then(data => speed = data)
+  let time = 0
+await carsEngine().then(data => time = data)
   el.style.transform = `translate(${window.innerWidth - 230}px)`
-  el.style.transition=`${speed}s` 
+  el.style.transition=`${time}s` 
+}
+
+function drawStop(el: HTMLElement) {
+  el.style.transform = `translate(0px)`
+  el.style.transition=`0s` 
 }
 
 
 start.forEach(el => {
   el.addEventListener('click', ()=>{
-    let a = el.id.replace(/[^0-9]/g,'')
+    let id = el.id.replace(/[^0-9]/g,'')
     carImg.forEach(el => {
-      if(el.id == `Capa_${a}`){
+      if(el.id == `Capa_${id}`){
         draw(el.parentElement?.querySelector('.carImg')!)
+      }
+    })
+
+  })
+})
+
+stop.forEach(el => {
+  el.addEventListener('click', ()=>{
+    let id = el.id.replace(/[^0-9]/g,'')
+    carImg.forEach(el => {
+      if(el.id == `Capa_${id}`){
+        drawStop(el.parentElement?.querySelector('.carImg')!)
       }
     })
 
